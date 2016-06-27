@@ -243,3 +243,5 @@ ModelManifest.xml
 
 # FAKE - F# Make
 .fake/
+/BattleNetSharp.UnitTests/Properties/Settings.settings
+/BattleNetSharp.UnitTests/Properties/Settings.Designer.cs

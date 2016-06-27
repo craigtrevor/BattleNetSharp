@@ -19,30 +19,39 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
+using System.Globalization;
 using System.Linq;
-using System.Net;
-using System.Security;
-using System.Security.Permissions;
-using System.Text.RegularExpressions;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleNetSharp.ApiClient.TestConsole
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class Program
+    /// <summary>
+    ///   ApiClient for World of WarCraft APIs
+    /// </summary>
+    public class WowClient : ApiClient
     {
-        /// <summary>
-        ///   Main entry point for the application
-        /// </summary>
-        private static void Main()
+
+        public WowClient(Region region, string publicKey, string locale)
+            : base(region, publicKey, locale)
         {
+            _publicKey = publicKey;
+            _locale = locale;
         }
 
+        private readonly string _publicKey;
+        private readonly string _locale;
+
+        /// <summary>
+        ///   begins an async operation to retrieve information about a spell
+        /// </summary>
+        /// <param name="spellId"> spell id </param>
+        /// <returns> async operation result </returns>
+        public Task<Spell> GetSpellAsync(int spellId)
+        {
+            return GetAsync<Spell>("/wow/spell/" + spellId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
     }
 }

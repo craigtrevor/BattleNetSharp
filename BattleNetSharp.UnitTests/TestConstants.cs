@@ -19,30 +19,20 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Security;
-using System.Security.Permissions;
-using System.Text.RegularExpressions;
+using System.Text;
 using System.Threading.Tasks;
+using BattleNetSharp.Community;
 
-namespace BattleNetSharp.ApiClient.TestConsole
+namespace BattleNetSharp.UnitTests
 {
-    internal static class Program
+    internal static class TestConstants
     {
-        /// <summary>
-        ///   Main entry point for the application
-        /// </summary>
-        private static void Main()
-        {
-        }
+        public static readonly Region TestRegion = Region.US;
+        public static readonly string TestLocale = "en_US";
 
+        public static readonly int WowTestSpellId = 8056;
     }
 }

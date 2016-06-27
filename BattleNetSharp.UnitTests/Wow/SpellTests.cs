@@ -19,30 +19,29 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
 using System;
-using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
-using System.Linq;
-using System.Net;
-using System.Security;
-using System.Security.Permissions;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
+using BattleNetSharp.Community.Wow;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BattleNetSharp.ApiClient.TestConsole
+namespace BattleNetSharp.UnitTests.Wow
 {
-    internal static class Program
+    [TestClass]
+    public class SpellTests
     {
-        /// <summary>
-        ///   Main entry point for the application
-        /// </summary>
-        private static void Main()
+        [TestMethod]
+        [TestCategory("WOW")]
+        public void TestSpell()
         {
+            var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
+            var spell = client.GetSpellAsync(TestConstants.WowTestSpellId).Result;
+            Assert.IsNotNull(spell);
+            Assert.IsNotNull(spell.Name);
+            Assert.IsNotNull(spell.Icon);
+            Assert.IsNotNull(spell.Description);
+            Assert.IsNotNull(spell.Range);
+            Assert.IsNotNull(spell.CastTime);
+            Assert.IsNotNull(spell.PowerCost);
+            Assert.IsNotNull(spell.Cooldown);
         }
-
     }
 }

@@ -19,30 +19,25 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Security;
-using System.Security.Permissions;
-using System.Text.RegularExpressions;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleNetSharp.ApiClient.TestConsole
+namespace BattleNetSharp.Community
 {
-    internal static class Program
+    /// <summary>
+    /// Json date converter for wow APIs where time stamps are returned in milliseconds
+    /// </summary>
+    internal class DatetimeMillisecondsConverter : DatetimeConverter
     {
         /// <summary>
-        ///   Main entry point for the application
+        /// Constructor
         /// </summary>
-        private static void Main()
+        public DatetimeMillisecondsConverter() : base(true)
         {
-        }
 
+        }
     }
 }

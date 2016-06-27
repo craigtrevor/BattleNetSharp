@@ -19,30 +19,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
-using Newtonsoft.Json.Bson;
-using Newtonsoft.Json.Linq;
 using System;
 using System.Collections.Generic;
-using System.Configuration;
-using System.IO;
 using System.Linq;
-using System.Net;
-using System.Security;
-using System.Security.Permissions;
-using System.Text.RegularExpressions;
+using System.Text;
 using System.Threading.Tasks;
 
-namespace BattleNetSharp.ApiClient.TestConsole
+namespace BattleNetSharp.Community
 {
-    internal static class Program
+    /// <summary>
+    ///   Thrown when an exception is thrown by a cache manager. This is the only type of exception that the ApiClient class will swallow.
+    ///   If a cache manager throws any other exception it will not be caught
+    /// </summary>
+    public class CacheManagerException : Exception
     {
         /// <summary>
-        ///   Main entry point for the application
+        ///   Constructor
         /// </summary>
-        private static void Main()
+        public CacheManagerException()
         {
         }
 
+        /// <summary>
+        ///   constructor
+        /// </summary>
+        /// <param name="message"> exception message </param>
+        public CacheManagerException(string message) : base(message)
+        {
+        }
+
+        /// <summary>
+        ///   constructor
+        /// </summary>
+        /// <param name="message"> message </param>
+        /// <param name="inner"> inner exception </param>
+        public CacheManagerException(string message, Exception inner) : base(message, inner)
+        {
+        }
     }
 }
