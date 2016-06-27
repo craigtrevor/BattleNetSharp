@@ -80,16 +80,6 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ApiResponseTests.cs" />
-    <Compile Include="BattlePetTests.cs" />
-    <Compile Include="CacheTests.cs" />
-    <Compile Include="ChallengeTests.cs" />
-    <Compile Include="CharacterUnitTests.cs" />
-    <Compile Include="DiabloTests.cs" />
-    <Compile Include="ItemTests.cs" />
-    <Compile Include="PvpTests.cs" />
-    <Compile Include="TestConstants.cs" />
-    <Compile Include="WowClientTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
