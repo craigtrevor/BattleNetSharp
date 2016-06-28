@@ -19,72 +19,47 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace BattleNetSharp.Community.Wow
 {
     /// <summary>
-    ///   Represents an achievement reward item
+    ///   An achievement criteria
     /// </summary>
     [DataContract]
-    public class RewardItem
+    public class AchievementCriterion
     {
         /// <summary>
-        ///   Gets or sets the item id
+        ///   Achievement criteria
         /// </summary>
-        [DataMember(Name = "id", IsRequired = true)]
+        [DataMember(Name = "id")]
         public int Id { get; internal set; }
 
         /// <summary>
-        /// Reward's item level
+        ///   Achievement description
         /// </summary>
-        [DataMember(Name = "itemLevel", IsRequired = false)]
-        public int ItemLevel { get; internal set; }
+        [DataMember(Name = "description")]
+        public string Description { get; internal set; }
 
         /// <summary>
-        ///   Gets or sets the item's stats
+        ///   Order Index
         /// </summary>
-        [DataMember(Name = "stats", IsRequired = false)]
-        public IList<ItemStat> Stats { get; internal set; }
+        [DataMember(Name = "orderIndex")]
+        public int OrderIndex { get; internal set; }
 
         /// <summary>
-        ///   Gets or sets the item's base armor
+        ///   Max
         /// </summary>
-        [DataMember(Name = "armor", IsRequired = true)]
-        public int Armor { get; internal set; }
+        [DataMember(Name = "max")]
+        public int Max { get; internal set; }
 
         /// <summary>
-        ///   Gets or sets the item name
+        ///   string representation for debug purposes
         /// </summary>
-        [DataMember(Name = "name", IsRequired = true)]
-        public string Name { get; internal set; }
-
-        /// <summary>
-        ///   Gets or sets the item icon
-        /// </summary>
-        [DataMember(Name = "icon", IsRequired = true)]
-        public string Icon { get; internal set; }
-
-        /// <summary>
-        ///   Gets or sets the item's quality
-        /// </summary>
-        [DataMember(Name = "quality", IsRequired = true)]
-        public ItemQuality Quality { get; internal set; }
-
-        /// <summary>
-        ///   Gets or sets the item parameters
-        /// </summary>
-        [DataMember(Name = "tooltipParams", IsRequired = false)]
-        public EquippedItemParameters TooltipParameters { get; internal set; }
-
-        /// <summary>
-        ///   Gets string representation (for debugging purposes)
-        /// </summary>
-        /// <returns> Gets string representation (for debugging purposes) </returns>
+        /// <returns> string representation for debug purposes </returns>
         public override string ToString()
         {
-            return Name;
+            return Description;
         }
     }
 }
