@@ -33,7 +33,7 @@ namespace BattleNetSharp.UnitTests.Wow
         public void TestAchievement()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
-            var achievement = client.GetAchievementAsync(TestConstants.WowTestSpellId).Result;
+            var achievement = client.GetAchievementAsync(TestConstants.WowTestAchievementId).Result;
             Assert.IsNotNull(achievement);
             Assert.IsNotNull(achievement.Id);
             Assert.IsNotNull(achievement.Title);
@@ -46,7 +46,8 @@ namespace BattleNetSharp.UnitTests.Wow
             Assert.IsNotNull(achievement.Criteria);
             Assert.IsTrue(achievement.Criteria.Count > 0);
             Assert.IsNotNull(achievement.AccountWide);
-            Assert.IsNotNull(achievement.FactionId);
+            Assert.IsNotNull(achievement.Faction);
         }
+
     }
 }
