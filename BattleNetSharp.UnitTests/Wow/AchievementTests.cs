@@ -20,20 +20,33 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using BattleNetSharp.Community.Wow;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.UnitTests.Wow
 {
-    internal static class TestConstants
+    [TestClass]
+    public class AchievementTests
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
-
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
+        [TestMethod]
+        [TestCategory("WOW")]
+        public void TestAchievement()
+        {
+            var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
+            var achievement = client.GetAchievementAsync(TestConstants.WowTestSpellId).Result;
+            Assert.IsNotNull(achievement);
+            Assert.IsNotNull(achievement.Id);
+            Assert.IsNotNull(achievement.Title);
+            Assert.IsNotNull(achievement.Icon);
+            Assert.IsNotNull(achievement.Points);
+            Assert.IsNotNull(achievement.Description);
+            Assert.IsNotNull(achievement.Reward);
+            Assert.IsNotNull(achievement.RewardItems);
+            Assert.IsTrue(achievement.RewardItems.Count > 0);
+            Assert.IsNotNull(achievement.Criteria);
+            Assert.IsTrue(achievement.Criteria.Count > 0);
+            Assert.IsNotNull(achievement.AccountWide);
+            Assert.IsNotNull(achievement.FactionId);
+        }
     }
 }
