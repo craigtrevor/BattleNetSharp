@@ -57,6 +57,7 @@
     <Compile Include="Region.cs" />
     <Compile Include="Wow\Achievement.cs" />
     <Compile Include="Wow\ItemStat.cs" />
+    <Compile Include="Wow\ItemStatType.cs" />
     <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Spell.cs" />
     <Compile Include="Wow\WowClient.cs" />
