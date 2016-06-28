@@ -45,6 +45,16 @@ namespace BattleNetSharp.Community.Wow
         private readonly string _locale;
 
         /// <summary>
+        ///   Begins an asynchronous operation to get information about an achievement
+        /// </summary>
+        /// <param name="achievementId"> achievement id </param>
+        /// <returns> The state of the async operation </returns>
+        public Task<Achievement> GetAchievementAsync(int achievementId)
+        {
+            return GetAsync<Achievement>("/wow/achievement/" + achievementId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
