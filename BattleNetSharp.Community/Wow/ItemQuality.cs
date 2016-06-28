@@ -19,21 +19,51 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
-
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   An enumeration representing item quality
+    /// </summary>
+    public enum ItemQuality
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Poor (Grey)
+        /// </summary>
+        Poor = 0,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
+        /// <summary>
+        ///   Common (White)
+        /// </summary>
+        Common = 1,
+
+        /// <summary>
+        ///   Uncommon (Green)
+        /// </summary>
+        Uncommon = 2,
+
+        /// <summary>
+        ///   Rare (Blue)
+        /// </summary>
+        Rare = 3,
+
+        /// <summary>
+        ///   Epic (Purple)
+        /// </summary>
+        Epic = 4,
+
+        /// <summary>
+        ///   Legendary (Orange)
+        /// </summary>
+        Legendary = 5,
+
+        /// <summary>
+        ///   Artifact (Golden)
+        /// </summary>
+        Artifact = 6,
+
+        /// <summary>
+        ///   Heirloom (Golden)
+        /// </summary>
+        Heirloom = 7
     }
 }

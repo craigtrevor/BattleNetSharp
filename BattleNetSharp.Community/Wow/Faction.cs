@@ -19,21 +19,38 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Represents a character's or guild's faction
+    /// </summary>
+    [DataContract]
+    public enum Faction
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   None
+        /// </summary>
+        [EnumMember(Value = "none")]
+        None = -1,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
+        /// <summary>
+        ///   Neutral
+        /// </summary>
+        [EnumMember(Value = "neutral")]
+        Neutral = 2,
+
+        /// <summary>
+        ///   Alliance
+        /// </summary>
+        [EnumMember(Value = "alliance")]
+        Alliance = 0,
+
+        /// <summary>
+        ///   Horde (Loktar Ogar! Victory or Death! For the Horde!)
+        /// </summary>
+        [EnumMember(Value = "horde")]
+        Horde = 1,
     }
 }

@@ -13,7 +13,7 @@
     <DefaultLanguage>en-US</DefaultLanguage>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{786C830F-07A1-408B-BD7F-6EE04809D6DB};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <TargetFrameworkProfile>Profile47</TargetFrameworkProfile>
+    <TargetFrameworkProfile>Profile255</TargetFrameworkProfile>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
@@ -55,6 +55,15 @@
     <Compile Include="JsonApiResponseConverter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Region.cs" />
+    <Compile Include="Wow\Achievement.cs" />
+    <Compile Include="Wow\AchievementCriterion.cs" />
+    <Compile Include="Wow\EquippedItemParameters.cs" />
+    <Compile Include="Wow\EquippedItemUpgrade.cs" />
+    <Compile Include="Wow\Faction.cs" />
+    <Compile Include="Wow\ItemQuality.cs" />
+    <Compile Include="Wow\ItemStat.cs" />
+    <Compile Include="Wow\ItemStatType.cs" />
+    <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Spell.cs" />
     <Compile Include="Wow\WowClient.cs" />
   </ItemGroup>

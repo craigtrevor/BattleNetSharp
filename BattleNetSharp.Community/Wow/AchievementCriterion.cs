@@ -19,21 +19,47 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   An achievement criteria
+    /// </summary>
+    [DataContract]
+    public class AchievementCriterion
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Achievement criteria
+        /// </summary>
+        [DataMember(Name = "id")]
+        public int Id { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
+        /// <summary>
+        ///   Achievement description
+        /// </summary>
+        [DataMember(Name = "description")]
+        public string Description { get; internal set; }
+
+        /// <summary>
+        ///   Order Index
+        /// </summary>
+        [DataMember(Name = "orderIndex")]
+        public int OrderIndex { get; internal set; }
+
+        /// <summary>
+        ///   Max
+        /// </summary>
+        [DataMember(Name = "max")]
+        public int Max { get; internal set; }
+
+        /// <summary>
+        ///   string representation for debug purposes
+        /// </summary>
+        /// <returns> string representation for debug purposes </returns>
+        public override string ToString()
+        {
+            return Description;
+        }
     }
 }

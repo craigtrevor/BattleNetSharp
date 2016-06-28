@@ -19,49 +19,49 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
 using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Runtime.Serialization;
 
 namespace BattleNetSharp.Community.Wow
 {
     /// <summary>
-    ///   ApiClient for World of WarCraft APIs
+    ///   Represents an item bonus stat
     /// </summary>
-    public class WowClient : ApiClient
+    [DataContract]
+    public class ItemStat
     {
-
-        public WowClient(Region region, string publicKey, string locale)
-            : base(region, publicKey, locale)
-        {
-            _publicKey = publicKey;
-            _locale = locale;
-        }
-
-        private readonly string _publicKey;
-        private readonly string _locale;
+        /// <summary>
+        ///   Gets or sets the bonus stat type
+        /// </summary>
+        [DataMember(Name = "stat", IsRequired = true)]
+        public ItemStatType StatType { get; internal set; }
 
         /// <summary>
-        ///   Begins an asynchronous operation to get information about an achievement
+        ///   Gets or sets the bonus stat amount
         /// </summary>
-        /// <param name="achievementId"> achievement id </param>
-        /// <returns> The state of the async operation </returns>
-        public Task<Achievement> GetAchievementAsync(int achievementId)
-        {
-            return GetAsync<Achievement>("/wow/achievement/" + achievementId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
-        }
+        [DataMember(Name = "amount", IsRequired = true)]
+        public int Amount { get; internal set; }
+
 
         /// <summary>
-        ///   begins an async operation to retrieve information about a spell
+        ///   Gets or sets whether the stat is reforged. this is true for the reforged to stat (the stat that is increased)
         /// </summary>
-        /// <param name="spellId"> spell id </param>
-        /// <returns> async operation result </returns>
-        public Task<Spell> GetSpellAsync(int spellId)
+        [DataMember(Name = "reforged", IsRequired = false)]
+        public bool IsReforged { get; internal set; }
+
+        /// <summary>
+        ///    Gets or sets the reforged amount i.e. the stat that is decreased when the item is reforged (this should be negative)
+        /// </summary>
+        [DataMember(Name = "reforgedAmount", IsRequired = false)]
+        public int ReforgedAmount { get; internal set; }
+
+        /// <summary>
+        ///   Gets string representation (for debugging purposes)
+        /// </summary>
+        /// <returns> Gets string representation (for debugging purposes) </returns>
+        public override string ToString()
         {
-            return GetAsync<Spell>("/wow/spell/" + spellId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+            return string.Format(CultureInfo.CurrentCulture, "{0}: {1}", StatType, Amount);
         }
     }
 }

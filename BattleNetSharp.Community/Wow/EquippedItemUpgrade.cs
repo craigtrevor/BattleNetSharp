@@ -19,21 +19,32 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    /// Information about an equipped item upgrade
+    /// </summary>
+    [DataContract]
+    public class EquippedItemUpgrade
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        /// Gets or sets the current number of upgrades made on the item
+        /// </summary>
+        [DataMember(Name = "current", IsRequired = false)]
+        public int Current { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
+        /// <summary>
+        /// Gets or sets the total number of upgrades possible on the item
+        /// </summary>
+        [DataMember(Name = "total", IsRequired = false)]
+        public int Total { get; internal set; }
+
+        /// <summary>
+        /// Gets or sets the item level increment of the upgraded item
+        /// </summary>
+        [DataMember(Name = "itemLevelIncrement", IsRequired = false)]
+        public int ItemLevelIncrement { get; internal set; }
     }
 }
