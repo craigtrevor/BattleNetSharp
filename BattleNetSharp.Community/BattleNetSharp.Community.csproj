@@ -58,7 +58,7 @@
     <Compile Include="Wow\Achievement.cs" />
     <Compile Include="Wow\AchievementCriterion.cs" />
     <Compile Include="Wow\Battlegroup.cs" />
-    <Compile Include="Wow\Battlegroups.cs" />
+    <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />

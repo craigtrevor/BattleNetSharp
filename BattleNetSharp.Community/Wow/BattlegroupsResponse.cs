@@ -30,7 +30,7 @@ namespace BattleNetSharp.Community.Wow
     ///   Battle groups information
     /// </summary>
     [DataContract]
-    public class Battlegroups : ApiResponse
+    public class BattlegroupsResponse : ApiResponse
     {
         /// <summary>
         ///   Gets battle grops

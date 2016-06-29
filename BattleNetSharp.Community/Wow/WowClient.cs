@@ -68,9 +68,9 @@ namespace BattleNetSharp.Community.Wow
         ///   Get the battlegroups for the region
         /// </summary>
         /// <returns> The status of the async operation </returns>
-        public Task<Battlegroups> GetBattlegroupsAsync()
+        public Task<BattlegroupsResponse> GetBattlegroupsAsync()
         {
-            return GetAsync<Battlegroups>("/wow/data/battlegroups/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+            return GetAsync<BattlegroupsResponse>("/wow/data/battlegroups/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
     }
 }
