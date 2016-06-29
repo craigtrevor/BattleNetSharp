@@ -93,7 +93,7 @@ namespace BattleNetSharp.Community.Wow
             {
                 return races;
             }
-            var racesResponse = await GetAsync<RacesResponse>("/api/wow/data/character/races", null);
+            var racesResponse = await GetAsync<RacesResponse>("/wow/data/character/races" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
             races = new ReadOnlyCollection<CharacterRace>(racesResponse.Races);
             _races.AddValue(Locale, races);
             return races;

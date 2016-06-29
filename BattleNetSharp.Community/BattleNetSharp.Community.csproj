@@ -68,6 +68,7 @@
     <Compile Include="Wow\ItemStatType.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
     <Compile Include="Wow\Race.cs" />
+    <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Spell.cs" />
     <Compile Include="Wow\WowClient.cs" />
