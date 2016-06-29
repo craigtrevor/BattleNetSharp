@@ -89,6 +89,7 @@
     <Compile Include="Wow\SpellTests.cs" />
     <Compile Include="Wow\AchievementTests.cs" />
     <Compile Include="Wow\BattlegroupsTests.cs" />
+    <Compile Include="Wow\RacesTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
