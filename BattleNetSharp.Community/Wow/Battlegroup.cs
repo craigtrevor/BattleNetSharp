@@ -27,7 +27,7 @@ namespace BattleNetSharp.Community.Wow
     ///   Battle group information
     /// </summary>
     [DataContract]
-    public class BattleGroup
+    public class Battlegroup
     {
         /// <summary>
         ///   Gets or sets the name of the battlegroup
