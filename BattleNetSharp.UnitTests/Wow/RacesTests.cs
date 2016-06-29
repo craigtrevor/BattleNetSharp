@@ -34,6 +34,7 @@ namespace BattleNetSharp.UnitTests.Wow
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
             var races = client.GetRacesAsync().Result;
             Assert.IsNotNull(races);
+            Assert.IsTrue(races.Count > 0);
         }
     }
 }
