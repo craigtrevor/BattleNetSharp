@@ -21,6 +21,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Globalization;
 using System.Linq;
 using System.Text;
@@ -71,6 +72,31 @@ namespace BattleNetSharp.Community.Wow
         public Task<BattlegroupsResponse> GetBattlegroupsAsync()
         {
             return GetAsync<BattlegroupsResponse>("/wow/data/battlegroups/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
+        ///   Character Races cache
+        /// </summary>
+        private static readonly MemoryCache<string, ReadOnlyCollection<CharacterRace>> _races =
+            new MemoryCache<string, ReadOnlyCollection<CharacterRace>>();
+
+        /// <summary>
+        ///   getting Race information asynchronously
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public async Task<IList<CharacterRace>> GetRacesAsync()
+        {
+            var races = _races.LookupValue(Locale);
+            if (races != null)
+            {
+                return races;
+            }
+            var racesResponse = await GetAsync<RacesResponse>("/api/wow/data/character/races", null);
+            races = new ReadOnlyCollection<CharacterRace>(racesResponse.Races);
+            _races.AddValue(Locale, races);
+            return races;
         }
     }
 }
