@@ -63,5 +63,14 @@ namespace BattleNetSharp.Community.Wow
         {
             return GetAsync<Spell>("/wow/spell/" + spellId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
+
+        /// <summary>
+        ///   Get the battlegroups for the region
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<Battlegroups> GetBattlegroupsAsync()
+        {
+            return GetAsync<Battlegroups>("/wow/data/battlegroups/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
     }
 }
