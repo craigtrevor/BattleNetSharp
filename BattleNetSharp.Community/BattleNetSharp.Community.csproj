@@ -59,7 +59,10 @@
     <Compile Include="Wow\AchievementCriterion.cs" />
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
+    <Compile Include="Wow\CharacterClass.cs" />
     <Compile Include="Wow\CharacterRace.cs" />
+    <Compile Include="Wow\ClassesResponse.cs" />
+    <Compile Include="Wow\ClassKey.cs" />
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />
@@ -67,6 +70,7 @@
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
+    <Compile Include="Wow\PowerType.cs" />
     <Compile Include="Wow\Race.cs" />
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\RewardItem.cs" />

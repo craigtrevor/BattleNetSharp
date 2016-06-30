@@ -98,5 +98,30 @@ namespace BattleNetSharp.Community.Wow
             _races.AddValue(Locale, races);
             return races;
         }
+
+        /// <summary>
+        ///   Character classes cache
+        /// </summary>
+        private static readonly MemoryCache<string, ReadOnlyCollection<CharacterClass>> _classes =
+            new MemoryCache<string, ReadOnlyCollection<CharacterClass>>();
+
+        /// <summary>
+        ///   getting class information asynchronously
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1006:DoNotNestGenericTypesInMemberSignatures")]
+        public async Task<IList<CharacterClass>> GetClassesAsync()
+        {
+            var classes = _classes.LookupValue(Locale);
+            if (classes != null)
+            {
+                return classes;
+            }
+            var classesResponse = await GetAsync<ClassesResponse>("/wow/data/character/classes" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+            classes = new ReadOnlyCollection<CharacterClass>(classesResponse.Classes);
+            _classes.AddValue(Locale, classes);
+            return classes;
+        }
     }
 }
