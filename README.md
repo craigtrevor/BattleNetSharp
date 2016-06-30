@@ -6,3 +6,8 @@ BattleNetSharp is a .NET Library for accessing Blizzard's World of Warcraft, Dia
 
 - The library handles all HTTP connections, error handling and JSON deserialization
 - Uses Task based async operations which makes developing responsive application easier
+- The following World of WarCraft API functions are currently supported
+  * Get Achievement information
+  * Get Battlegroups
+  * Get Character Classes
+  * Get Character Races
