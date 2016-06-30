@@ -24,80 +24,39 @@ using System.Runtime.Serialization;
 namespace BattleNetSharp.Community.Wow
 {
     /// <summary>
-    ///   Character class enumeration
+    ///   An enurmation representing a character's power type
     /// </summary>
     [DataContract]
-    public enum ClassKey
+    public enum PowerType
     {
         /// <summary>
-        ///   None
+        ///   Mana
         /// </summary>
-        None = 0,
+        [EnumMember(Value = "mana")]
+        Mana,
 
         /// <summary>
-        ///   Warrior
+        ///   Energy
         /// </summary>
-        [EnumMember(Value = "warrior")]
-        Warrior = 1,
+        [EnumMember(Value = "energy")]
+        Energy,
 
         /// <summary>
-        ///   Paladin
+        ///   Rage
         /// </summary>
-        [EnumMember(Value = "paladin")]
-        Paladin = 2,
+        [EnumMember(Value = "rage")]
+        Rage,
 
         /// <summary>
-        ///   Hunter
+        ///   Runic power
         /// </summary>
-        [EnumMember(Value = "hunter")]
-        Hunter = 3,
+        [EnumMember(Value = "runic-power")]
+        RunicPower,
 
         /// <summary>
-        ///   Rogue
+        ///   Focus
         /// </summary>
-        [EnumMember(Value = "rogue")]
-        Rogue = 4,
-
-        /// <summary>
-        ///   Priest
-        /// </summary>
-        [EnumMember(Value = "priest")]
-        Priest = 5,
-
-        /// <summary>
-        ///   Death Knight
-        /// </summary>
-        [EnumMember(Value = "death-knight")]
-        DeathKnight = 6,
-
-        /// <summary>
-        ///   Shaman
-        /// </summary>
-        [EnumMember(Value = "shaman")]
-        Shaman = 7,
-
-        /// <summary>
-        ///   Mage
-        /// </summary>
-        [EnumMember(Value = "mage")]
-        Mage = 8,
-
-        /// <summary>
-        ///   Warlock
-        /// </summary>
-        [EnumMember(Value = "warlock")]
-        Warlock = 9,
-
-        /// <summary>
-        ///   Monk
-        /// </summary>
-        [EnumMember(Value = "monk")]
-        Monk = 10,
-
-        /// <summary>
-        ///   Druid
-        /// </summary>
-        [EnumMember(Value = "druid")]
-        Druid = 11
+        [EnumMember(Value = "focus")]
+        Focus
     }
 }
