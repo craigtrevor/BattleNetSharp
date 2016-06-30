@@ -118,7 +118,7 @@ namespace BattleNetSharp.Community.Wow
             {
                 return classes;
             }
-            var classesResponse = await GetAsync<ClassesResponse>("/api/wow/data/character/classes", null);
+            var classesResponse = await GetAsync<ClassesResponse>("/wow/data/character/classes" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
             classes = new ReadOnlyCollection<CharacterClass>(classesResponse.Classes);
             _classes.AddValue(Locale, classes);
             return classes;
