@@ -29,6 +29,7 @@ namespace BattleNetSharp.UnitTests.Wow
     public class CharacterAchievementTests
     {
         [TestMethod]
+        [TestCategory("WOW")]
         public void TestCharacterAchievements()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
@@ -54,9 +55,6 @@ namespace BattleNetSharp.UnitTests.Wow
             Assert.IsNotNull(higherlearning.Reward);
             Assert.IsNotNull(higherlearning.RewardItems);
             Assert.IsTrue(higherlearning.RewardItems.Count > 0);
-            var armoredBrownBear = generalCategory.Achievements.FirstOrDefault(a => a.Title == "Armored Brown Bear");
-            Assert.IsNotNull(armoredBrownBear);
-            Assert.AreEqual(true, armoredBrownBear.AccountWide);
 
             var questCategory = achievements.Categories.FirstOrDefault(c => c.Name == "Quests");
             Assert.IsTrue(questCategory != null && questCategory.Id > 0);
