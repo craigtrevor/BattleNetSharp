@@ -19,7 +19,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -36,9 +35,6 @@ namespace BattleNetSharp.Community.Wow
         ///   Note that the property name in JSON response from battle.net is called achievements, but it actually returns categories.
         /// </summary>
         [DataMember(Name = "achievements", IsRequired = true)]
-        public IList<AchievementCategory> Categories {
-            get;
-            internal set;
-        }
+        public IList<AchievementCategory> Categories { get; internal set; }
     }
 }

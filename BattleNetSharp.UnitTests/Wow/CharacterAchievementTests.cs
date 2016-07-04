@@ -19,6 +19,7 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using System.Linq;
 using BattleNetSharp.Community.Wow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -31,7 +32,7 @@ namespace BattleNetSharp.UnitTests.Wow
         public void TestCharacterAchievements()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
-            var achievements = client.GetCharacterAchievementsAsync(TestConstants.WowTestAchievementId).Result;
+            var achievements = client.GetCharacterAchievementsAsync().Result;
             Assert.IsNotNull(achievements.Categories);
             Assert.AreEqual(achievements.Categories[0].Name, achievements.Categories[0].ToString());
             var generalCategory = achievements.Categories.FirstOrDefault(c => c.Name == "General");
