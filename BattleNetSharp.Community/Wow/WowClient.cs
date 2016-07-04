@@ -123,5 +123,15 @@ namespace BattleNetSharp.Community.Wow
             _classes.AddValue(Locale, classes);
             return classes;
         }
+
+        /// <summary>
+        ///   Begins an asynchronous operation to character achievements
+        /// </summary>
+        /// <returns> The state of the async operation </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public Task<AchievementsResponse> GetCharacterAchievementsAsync()
+        {
+            return GetAsync<AchievementsResponse>("/wow/data/character/achievements" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
     }
 }
