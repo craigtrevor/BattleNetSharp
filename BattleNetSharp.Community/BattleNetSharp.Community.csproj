@@ -57,6 +57,7 @@
     <Compile Include="Region.cs" />
     <Compile Include="Wow\Achievement.cs" />
     <Compile Include="Wow\AchievementCriterion.cs" />
+    <Compile Include="Wow\AchievementsResponse.cs" />
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
