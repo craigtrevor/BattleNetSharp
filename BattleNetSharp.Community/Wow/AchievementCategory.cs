@@ -19,26 +19,48 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
 namespace BattleNetSharp.Community.Wow
 {
     /// <summary>
-    ///   Represents the response of guild or character achievements request
+    ///   Represents an achievement category
     /// </summary>
     [DataContract]
-    public class AchievementsResponse : ApiResponse
+    public class AchievementCategory
     {
         /// <summary>
-        ///   Gets or sets the achievements categories. 
-        ///   Note that the property name in JSON response from battle.net is called achievements, but it actually returns categories.
+        ///   Gets or sets the achievement id
         /// </summary>
-        [DataMember(Name = "achievements", IsRequired = true)]
-        public IList<AchievementCategory> Categories {
-            get;
-            internal set;
+        [DataMember(Name = "id", IsRequired = true)]
+        public int Id { get; internal set; }
+
+        /// <summary>
+        ///   Gets or sets the achievement category name
+        /// </summary>
+        [DataMember(Name = "name", IsRequired = true)]
+        public string Name { get; internal set; }
+
+        /// <summary>
+        ///   Gets or sets the subcategories of this category
+        /// </summary>
+        [DataMember(Name = "categories", IsRequired = false)]
+        public IList<AchievementCategory> Categories { get; internal set; }
+
+        /// <summary>
+        ///   Gets or sets the achievements under this category
+        /// </summary>
+        [DataMember(Name = "achievements", IsRequired = false)]
+        public IList<Achievement> Achievements { get; internal set; }
+
+        /// <summary>
+        ///   Gets string representation (for debugging purposes)
+        /// </summary>
+        /// <returns> Gets string representation (for debugging purposes) </returns>
+        public override string ToString()
+        {
+            return Name;
         }
     }
 }
