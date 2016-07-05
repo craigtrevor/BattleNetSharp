@@ -28,6 +28,7 @@ namespace BattleNetSharp.UnitTests.Wow
     public class GuildAchievementsTests
     {
         [TestMethod]
+        [TestCategory("WOW")]
         public void TestGuildAchievements()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
