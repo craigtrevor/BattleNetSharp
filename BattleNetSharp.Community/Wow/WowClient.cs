@@ -143,5 +143,15 @@ namespace BattleNetSharp.Community.Wow
         {
             return GetAsync<GuildRewardsResponse>("/wow/data/guild/rewards" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
+
+        /// <summary>
+        ///   Begins an asynchronous operation to retrieve guild perks
+        /// </summary>
+        /// <returns> The state of the async operation </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public Task<GuildPerksResponse> GetGuildPerksAsync()
+        {
+            return GetAsync<GuildPerksResponse>("/wow/data/guild/perks" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
     }
 }
