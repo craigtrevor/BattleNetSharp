@@ -68,6 +68,8 @@
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />
+    <Compile Include="Wow\GuildReward.cs" />
+    <Compile Include="Wow\GuildRewardsResponse.cs" />
     <Compile Include="Wow\ItemQuality.cs" />
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
@@ -77,6 +79,7 @@
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Spell.cs" />
+    <Compile Include="Wow\Standing.cs" />
     <Compile Include="Wow\WowClient.cs" />
   </ItemGroup>
   <ItemGroup>
