@@ -79,6 +79,7 @@
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Spell.cs" />
+    <Compile Include="Wow\Standing.cs" />
     <Compile Include="Wow\WowClient.cs" />
   </ItemGroup>
   <ItemGroup>
