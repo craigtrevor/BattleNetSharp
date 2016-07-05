@@ -94,6 +94,7 @@
     <Compile Include="Wow\CharacterAchievementTests.cs" />
     <Compile Include="Wow\GuildRewardsTests.cs" />
     <Compile Include="Wow\GuildPerksTests.cs" />
+    <Compile Include="Wow\GuildAchievementsTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />
