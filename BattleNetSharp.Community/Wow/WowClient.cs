@@ -141,7 +141,7 @@ namespace BattleNetSharp.Community.Wow
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public Task<GuildRewardsResponse> GetGuildRewardsAsync()
         {
-            return GetAsync<GuildRewardsResponse>("/api/wow/data/guild/rewards", null);
+            return GetAsync<GuildRewardsResponse>("/wow/data/guild/rewards" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
     }
 }
