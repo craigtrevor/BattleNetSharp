@@ -68,6 +68,7 @@
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />
+    <Compile Include="Wow\GuildRewardsResponse.cs" />
     <Compile Include="Wow\ItemQuality.cs" />
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
