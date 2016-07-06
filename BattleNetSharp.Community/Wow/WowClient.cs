@@ -183,5 +183,15 @@ namespace BattleNetSharp.Community.Wow
         {
             return GetAsync<TalentsResponse>("/wow/data/talents" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
+
+        /// <summary>
+        ///   Begins an async operation to retrieve information about battle pet types
+        /// </summary>
+        /// <returns> Async operation status </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public Task<BattlePetTypesResponse> GetBattlePetTypesAsync()
+        {
+            return GetAsync<BattlePetTypesResponse>("/wow/data/pet/types" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
     }
 }
