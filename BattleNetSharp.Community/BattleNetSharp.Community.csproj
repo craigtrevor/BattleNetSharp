@@ -72,6 +72,8 @@
     <Compile Include="Wow\GuildPerksResponse.cs" />
     <Compile Include="Wow\GuildReward.cs" />
     <Compile Include="Wow\GuildRewardsResponse.cs" />
+    <Compile Include="Wow\ItemCategoryName.cs" />
+    <Compile Include="Wow\ItemCategoryNamesResponse.cs" />
     <Compile Include="Wow\ItemQuality.cs" />
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
