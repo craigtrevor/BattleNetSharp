@@ -171,7 +171,7 @@ namespace BattleNetSharp.Community.Wow
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public Task<ItemCategoryNamesResponse> GetItemCategoryNamesAsync()
         {
-            return GetAsync<ItemCategoryNamesResponse>("/api/wow/data/item/classes", null);
+            return GetAsync<ItemCategoryNamesResponse>("/wow/data/item/classes" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
     }
 }

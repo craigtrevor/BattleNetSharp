@@ -34,10 +34,6 @@ namespace BattleNetSharp.Community.Wow
         ///   Gets or sets item category (class) list
         /// </summary>
         [DataMember(Name = "classes", IsRequired = true)]
-        public IList<ItemCategoryName> CategoryNames
-        {
-            get;
-            internal set;
-        }
+        public IList<ItemCategoryName> CategoryNames { get; internal set; }
     }
 }

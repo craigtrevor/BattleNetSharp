@@ -19,7 +19,6 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using Newtonsoft.Json;
 using System.Collections.Generic;
 using System.Runtime.Serialization;
 
@@ -35,31 +34,19 @@ namespace BattleNetSharp.Community.Wow
         ///   Gets or sets the category
         /// </summary>
         [DataMember(Name = "class", IsRequired = true)]
-        public ItemCategory Category
-        {
-            get;
-            internal set;
-        }
+        public ItemCategory Category { get; internal set; }
 
         /// <summary>
         ///   Gets or sets the category name
         /// </summary>
         [DataMember(Name = "name", IsRequired = true)]
-        public string Name
-        {
-            get;
-            internal set;
-        }
+        public string Name { get; internal set; }
 
         /// <summary>
         ///   Gets or sets the subcategories for this category
         /// </summary>
         [DataMember(Name = "subclasses")]
-        public IList<ItemSubcategoryName> Subcategories
-        {
-            get;
-            internal set;
-        }
+        public IList<ItemSubcategoryName> Subcategories { get; internal set; }
 
         /// <summary>
         ///   Gets string representation (for debugging purposes)
