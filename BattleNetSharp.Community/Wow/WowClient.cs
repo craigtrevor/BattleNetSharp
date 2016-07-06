@@ -163,5 +163,15 @@ namespace BattleNetSharp.Community.Wow
         {
             return GetAsync<AchievementsResponse>("/wow/data/guild/achievements" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
+
+        /// <summary>
+        ///   Begins an asynchronous operation to item category names (item classes)
+        /// </summary>
+        /// <returns> The state of the async operation </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public Task<ItemCategoryNamesResponse> GetItemCategoryNamesAsync()
+        {
+            return GetAsync<ItemCategoryNamesResponse>("/api/wow/data/item/classes", null);
+        }
     }
 }
