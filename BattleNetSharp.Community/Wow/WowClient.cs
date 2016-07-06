@@ -181,7 +181,7 @@ namespace BattleNetSharp.Community.Wow
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public Task<TalentsResponse> GetTalentsAsync()
         {
-            return GetAsync<TalentsResponse>("/api/wow/data/talents", null);
+            return GetAsync<TalentsResponse>("/wow/data/talents" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
     }
 }
