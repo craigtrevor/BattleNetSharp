@@ -62,6 +62,7 @@
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
+    <Compile Include="Wow\CharacterGlyph.cs" />
     <Compile Include="Wow\CharacterRace.cs" />
     <Compile Include="Wow\ClassesResponse.cs" />
     <Compile Include="Wow\ClassKey.cs" />
