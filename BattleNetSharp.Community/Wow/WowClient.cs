@@ -173,5 +173,15 @@ namespace BattleNetSharp.Community.Wow
         {
             return GetAsync<ItemCategoryNamesResponse>("/wow/data/item/classes" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
+
+        /// <summary>
+        ///   begins an async operation to retrieve information about class talents
+        /// </summary>
+        /// <returns> async operation result </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public Task<TalentsResponse> GetTalentsAsync()
+        {
+            return GetAsync<TalentsResponse>("/api/wow/data/talents", null);
+        }
     }
 }
