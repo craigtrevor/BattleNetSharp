@@ -78,6 +78,7 @@
     <Compile Include="Wow\ItemQuality.cs" />
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
+    <Compile Include="Wow\ItemSubcategoryName.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
     <Compile Include="Wow\PowerType.cs" />
     <Compile Include="Wow\Race.cs" />
