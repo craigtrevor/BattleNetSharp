@@ -65,6 +65,7 @@
     <Compile Include="Wow\CharacterRace.cs" />
     <Compile Include="Wow\ClassesResponse.cs" />
     <Compile Include="Wow\ClassKey.cs" />
+    <Compile Include="Wow\ClassTalentInfo.cs" />
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />
