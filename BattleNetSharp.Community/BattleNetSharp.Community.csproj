@@ -62,9 +62,13 @@
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
+    <Compile Include="Wow\CharacterGlyph.cs" />
     <Compile Include="Wow\CharacterRace.cs" />
+    <Compile Include="Wow\CharacterRoles.cs" />
+    <Compile Include="Wow\CharacterTalent.cs" />
     <Compile Include="Wow\ClassesResponse.cs" />
     <Compile Include="Wow\ClassKey.cs" />
+    <Compile Include="Wow\ClassTalentInfo.cs" />
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />
@@ -84,8 +88,10 @@
     <Compile Include="Wow\Race.cs" />
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\RewardItem.cs" />
+    <Compile Include="Wow\Specialization.cs" />
     <Compile Include="Wow\Spell.cs" />
     <Compile Include="Wow\Standing.cs" />
+    <Compile Include="Wow\TalentsResponse.cs" />
     <Compile Include="Wow\WowClient.cs" />
   </ItemGroup>
   <ItemGroup>
