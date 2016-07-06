@@ -191,7 +191,7 @@ namespace BattleNetSharp.Community.Wow
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
         public Task<BattlePetTypesResponse> GetBattlePetTypesAsync()
         {
-            return GetAsync<BattlePetTypesResponse>("/api/wow/data/pet/types", null);
+            return GetAsync<BattlePetTypesResponse>("/wow/data/pet/types" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
     }
 }
