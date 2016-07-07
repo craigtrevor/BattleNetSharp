@@ -74,6 +74,7 @@
     <Compile Include="Wow\EquippedItemParameters.cs" />
     <Compile Include="Wow\EquippedItemUpgrade.cs" />
     <Compile Include="Wow\Faction.cs" />
+    <Compile Include="Wow\GemBonus.cs" />
     <Compile Include="Wow\GemInfo.cs" />
     <Compile Include="Wow\GuildPerk.cs" />
     <Compile Include="Wow\GuildPerksResponse.cs" />
