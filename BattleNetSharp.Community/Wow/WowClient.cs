@@ -62,7 +62,7 @@ namespace BattleNetSharp.Community.Wow
         /// <returns> the status of the async operation </returns>
         public Task<Item> GetItemAsync(int itemId)
         {
-            return GetAsync<Item>("/api/wow/item/" + itemId.ToString(CultureInfo.InvariantCulture), null);
+            return GetAsync<Item>("/wow/item/" + itemId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
 
         /// <summary>

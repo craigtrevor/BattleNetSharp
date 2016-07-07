@@ -28,6 +28,7 @@ namespace BattleNetSharp.UnitTests.Wow
     public class ItemTests
     {
         [TestMethod]
+        [TestCategory("WOW")]
         public void TestItems()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
