@@ -85,6 +85,7 @@
     <Compile Include="Wow\ItemCategoryNamesResponse.cs" />
     <Compile Include="Wow\ItemQuality.cs" />
     <Compile Include="Wow\ItemSpell.cs" />
+    <Compile Include="Wow\ItemSpellTriggers.cs" />
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
     <Compile Include="Wow\ItemSubcategoryName.cs" />
