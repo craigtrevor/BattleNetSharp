@@ -89,6 +89,7 @@
     <Compile Include="Wow\ItemInventoryType.cs" />
     <Compile Include="Wow\ItemQuality.cs" />
     <Compile Include="Wow\ItemSet.cs" />
+    <Compile Include="Wow\ItemSetBonus.cs" />
     <Compile Include="Wow\ItemSpell.cs" />
     <Compile Include="Wow\ItemSpellTriggers.cs" />
     <Compile Include="Wow\ItemStat.cs" />
