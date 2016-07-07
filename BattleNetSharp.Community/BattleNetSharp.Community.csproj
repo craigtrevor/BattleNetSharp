@@ -96,6 +96,7 @@
     <Compile Include="Wow\Race.cs" />
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\RewardItem.cs" />
+    <Compile Include="Wow\Skill.cs" />
     <Compile Include="Wow\Specialization.cs" />
     <Compile Include="Wow\Spell.cs" />
     <Compile Include="Wow\Standing.cs" />
