@@ -56,6 +56,16 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an async operation to get an item information
+        /// </summary>
+        /// <param name="itemId"> item id </param>
+        /// <returns> the status of the async operation </returns>
+        public Task<Item> GetItemAsync(int itemId)
+        {
+            return GetAsync<Item>("/wow/item/" + itemId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
