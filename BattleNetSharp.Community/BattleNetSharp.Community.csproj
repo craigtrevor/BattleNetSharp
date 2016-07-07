@@ -76,6 +76,7 @@
     <Compile Include="Wow\Faction.cs" />
     <Compile Include="Wow\GemBonus.cs" />
     <Compile Include="Wow\GemInfo.cs" />
+    <Compile Include="Wow\GemType.cs" />
     <Compile Include="Wow\GuildPerk.cs" />
     <Compile Include="Wow\GuildPerksResponse.cs" />
     <Compile Include="Wow\GuildReward.cs" />
