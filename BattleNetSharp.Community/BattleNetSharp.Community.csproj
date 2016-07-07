@@ -103,6 +103,7 @@
     <Compile Include="Wow\Spell.cs" />
     <Compile Include="Wow\Standing.cs" />
     <Compile Include="Wow\TalentsResponse.cs" />
+    <Compile Include="Wow\WeaponDamage.cs" />
     <Compile Include="Wow\WeaponInfo.cs" />
     <Compile Include="Wow\WowClient.cs" />
   </ItemGroup>
