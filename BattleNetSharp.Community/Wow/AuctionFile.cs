@@ -20,21 +20,28 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
+using Newtonsoft.Json;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Represents an auction house dump file
+    /// </summary>
+    [DataContract]
+    public class AuctionFile
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Gets or sets the dump file url
+        /// </summary>
+        [DataMember(Name = "url", IsRequired = true)]
+        public string DownloadPath { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        ///   Gets the last modified date in UTC
+        /// </summary>
+        [DataMember(Name = "lastModified", IsRequired = true)]
+        [JsonConverter(typeof(DatetimeMillisecondsConverter))]
+        public DateTime LastModifiedUtc { get; internal set; }
     }
 }

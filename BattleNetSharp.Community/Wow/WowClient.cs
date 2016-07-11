@@ -56,6 +56,35 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Gets the most recent auction house dump
+        /// </summary>
+        /// <param name="realm"> Realm name </param>
+        /// <returns> the async task </returns>
+        public Task<AuctionDump> GetAuctionDumpAsync(string realm)
+        {
+            return GetAuctionDumpAsync(realm, DateTime.MinValue);
+        }
+
+        /// <summary>
+        ///   Gets the most recent auction house dump
+        /// </summary>
+        /// <param name="realm"> Realm name </param>
+        /// <param name="ifModifiedSince"> The datetime of the lastModified header of the last auction dump. </param>
+        /// <returns> the async task</returns>
+        public async Task<AuctionDump> GetAuctionDumpAsync(string realm, DateTime ifModifiedSince)
+        {
+            var files = await GetAsync<AuctionFilesResponse>("/wow/auction/data/" + GetSlug(realm) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+            if (files == null || files.Files == null || files.Files.Count == 0
+                || string.IsNullOrEmpty(files.Files[files.Files.Count - 1].DownloadPath)
+                || files.Files[0].LastModifiedUtc <= ifModifiedSince)
+            {
+                return null;
+            }
+            var dump = await GetAsync<AuctionDump>(files.Files[0].DownloadPath, null);
+            return dump;
+        }
+
+        /// <summary>
         ///   Begins an async operation to get an item information
         /// </summary>
         /// <param name="itemId"> item id </param>
@@ -202,6 +231,53 @@ namespace BattleNetSharp.Community.Wow
         public Task<BattlePetTypesResponse> GetBattlePetTypesAsync()
         {
             return GetAsync<BattlePetTypesResponse>("/wow/data/pet/types" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
+        ///   const used to replace accented characters with non-accented ones
+        /// </summary>
+        private const string AccentedCharacters = "ÂâÄäÃãÁáÀàÊêËëÉéÈèÎîÏïÍíÌìÔôÖöÕõÓóÒòÛûÜüÚúÙùÑñÇç";
+
+        /// <summary>
+        ///   const used to replace accented characters with non-accented ones
+        /// </summary>
+        private const string ReplacedCharacters = "aaaaaaaaaaeeeeeeeeiiiiiiiioooooooooouuuuuuuunncc";
+
+        /// <summary>
+        ///   Get a realm or battleground slug
+        /// </summary>
+        /// <param name="identifier"> string </param>
+        /// <returns> slug </returns>
+        private static string GetSlug(string identifier)
+        {
+            var builder = new StringBuilder();
+            bool dash = false;
+            foreach (char ch in identifier)
+            {
+                if (char.IsLetterOrDigit(ch))
+                {
+                    dash = false;
+                    // String.Normalise is not available in Portable Libraries
+                    int index = AccentedCharacters.IndexOf(ch);
+                    builder.Append(index >= 0 ? ReplacedCharacters[index] : char.ToLowerInvariant(ch));
+                }
+                else if (ch == ' ' && !dash)
+                {
+                    dash = true;
+                    builder.Append('-');
+                }
+            }
+            return builder.ToString();
+        }
+
+        /// <summary>
+        ///   Get the realm string to use in the Url for guild and character requests
+        /// </summary>
+        /// <param name="realmName"> Realm name </param>
+        /// <returns> realm string to use in Url for guild and character requests </returns>
+        public static string GetRealmSlug(string realmName)
+        {
+            return GetSlug(realmName);
         }
     }
 }

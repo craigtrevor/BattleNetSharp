@@ -19,22 +19,40 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
+using Newtonsoft.Json;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    /// </summary>
+    [DataContract]
+    public class PvpZone
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Gets or sets the pvp area Id
+        /// </summary>
+        [DataMember(Name = "area")]
+        public int AreaId { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        ///   Controlling faction
+        /// </summary>
+        [DataMember(Name = "controlling-faction")]
+        public Faction ControllingFaction { get; internal set; }
+
+        /// <summary>
+        ///   Gets or sets the time for the next battle
+        /// </summary>
+        [DataMember(Name = "next")]
+        [JsonConverter(typeof(DatetimeMillisecondsConverter))]
+        public DateTime NextBattleTimeUtc { get; internal set; }
+
+        /// <summary>
+        ///   Gets or sets the current status or the zone
+        /// </summary>
+        [DataMember(Name = "status")]
+        public PvpZoneStatus Status { get; internal set; }
     }
 }

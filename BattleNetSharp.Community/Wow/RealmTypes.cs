@@ -20,21 +20,44 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Enumeration representing all realm types
+    /// </summary>
+    [Flags]
+    public enum RealmTypes
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   None
+        /// </summary>
+        [EnumMember(Value = "none")]
+        None = 0,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        ///   PVE (Normal) Realm
+        /// </summary>
+        [EnumMember(Value = "pve")]
+        Pve = 1,
+
+        /// <summary>
+        ///   PVP (Player versus Player) Realm
+        /// </summary>
+        [EnumMember(Value = "pvp")]
+        Pvp = 2,
+
+        /// <summary>
+        ///   Role Playing Realm
+        /// </summary>
+        [EnumMember(Value = "rp")]
+        RP = 4,
+
+        /// <summary>
+        ///   Role Playing PVP Reaplm
+        /// </summary>
+        [EnumMember(Value = "rppvp")]
+        RPPvp = 6
     }
 }

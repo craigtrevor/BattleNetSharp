@@ -19,22 +19,44 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Realm population enumeration
+    /// </summary>
+    [DataContract]
+    public enum RealmPopulation
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Low
+        /// </summary>
+        [EnumMember(Value = "n/a")]
+        Unknown,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        ///   Low
+        /// </summary>
+        [EnumMember(Value = "low")]
+        Low,
+
+        /// <summary>
+        ///   Medium
+        /// </summary>
+        [EnumMember(Value = "medium")]
+        Medium,
+
+        /// <summary>
+        ///   High
+        /// </summary>
+        [EnumMember(Value = "high")]
+        High,
+
+        /// <summary>
+        ///   High
+        /// </summary>
+        [EnumMember(Value = "full")]
+        Full
     }
 }

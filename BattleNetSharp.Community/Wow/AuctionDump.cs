@@ -19,22 +19,37 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Globalization;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Represents a realm auctions dump
+    /// </summary>
+    [DataContract]
+    public class AuctionDump : ApiResponse
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Gets or sets the realm for which the dump belongs (note that realm type, status and queue are not retrieved)
+        /// </summary>
+        [DataMember(Name = "realms", IsRequired = true)]
+        public IList<Realm> Realms { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        ///   Gets or sets the auctions
+        /// </summary>
+        [DataMember(Name = "auctions", IsRequired = true)]
+        public IList<Auction> Auctions { get; internal set; }
+
+        /// <summary>
+        ///   Gets string representation (for debugging purposes)
+        /// </summary>
+        /// <returns> Gets string representation (for debugging purposes) </returns>
+        public override string ToString()
+        {
+            return string.Format(CultureInfo.CurrentCulture, "{0} auctions.", Auctions?.Count ?? 0);
+        }
     }
 }

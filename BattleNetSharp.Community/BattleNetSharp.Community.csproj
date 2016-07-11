@@ -59,6 +59,11 @@
     <Compile Include="Wow\AchievementCategory.cs" />
     <Compile Include="Wow\AchievementCriterion.cs" />
     <Compile Include="Wow\AchievementsResponse.cs" />
+    <Compile Include="Wow\Auction.cs" />
+    <Compile Include="Wow\AuctionDump.cs" />
+    <Compile Include="Wow\AuctionFile.cs" />
+    <Compile Include="Wow\AuctionFilesResponse.cs" />
+    <Compile Include="Wow\AuctionTimeLeft.cs" />
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\BattlePetType.cs" />
@@ -98,8 +103,13 @@
     <Compile Include="Wow\ItemSubcategoryName.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
     <Compile Include="Wow\PowerType.cs" />
+    <Compile Include="Wow\PvpZone.cs" />
+    <Compile Include="Wow\PvpZoneStatus.cs" />
     <Compile Include="Wow\Race.cs" />
     <Compile Include="Wow\RacesResponse.cs" />
+    <Compile Include="Wow\Realm.cs" />
+    <Compile Include="Wow\RealmPopulation.cs" />
+    <Compile Include="Wow\RealmTypes.cs" />
     <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Skill.cs" />
     <Compile Include="Wow\Socket.cs" />

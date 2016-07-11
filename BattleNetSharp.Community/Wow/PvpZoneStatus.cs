@@ -19,22 +19,36 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
-
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   PvP zone Status enumeration
+    /// </summary>
+    public enum PvpZoneStatus
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Unknown status
+        /// </summary>
+        Unknown = -1,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        ///   Idle (There is no battle atm)
+        /// </summary>
+        Idle = 0,
+
+        /// <summary>
+        ///   Populating (The battle is about to start)
+        /// </summary>
+        Populating = 1,
+
+        /// <summary>
+        ///   Active (there is a battle atm, Go HORDE)
+        /// </summary>
+        Active = 2,
+
+        /// <summary>
+        ///   The battle has just concluded
+        /// </summary>
+        Concluded = 3
     }
 }

@@ -19,22 +19,42 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    /// Auction time left
+    /// </summary>
+    [DataContract]
+    public enum AuctionTimeLeft
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        /// None
+        /// </summary>
+        [EnumMember(Value = "NONE")]
+        None = 0,
+        /// <summary>
+        /// Short
+        /// </summary>
+        [EnumMember(Value = "SHORT")]
+        Short = 1,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
+        /// <summary>
+        /// Medium
+        /// </summary>
+        [EnumMember(Value = "MEDIUM")]
+        Medium = 2,
+
+        /// <summary>
+        /// Long
+        /// </summary>
+        [EnumMember(Value = "LONG")]
+        Long = 3,
+        /// <summary>
+        /// Very long
+        /// </summary>
+        [EnumMember(Value = "VERY_LONG")]
+        VeryLong = 4
     }
 }
