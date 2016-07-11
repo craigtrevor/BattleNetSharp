@@ -61,6 +61,7 @@
     <Compile Include="Wow\AchievementsResponse.cs" />
     <Compile Include="Wow\Auction.cs" />
     <Compile Include="Wow\AuctionDump.cs" />
+    <Compile Include="Wow\AuctionTimeLeft.cs" />
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\BattlePetType.cs" />
