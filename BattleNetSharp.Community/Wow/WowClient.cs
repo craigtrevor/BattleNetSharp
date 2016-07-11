@@ -56,6 +56,35 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Gets the most recent auction house dump
+        /// </summary>
+        /// <param name="realm"> Realm name </param>
+        /// <returns> the async task </returns>
+        public Task<AuctionDump> GetAuctionDumpAsync(string realm)
+        {
+            return GetAuctionDumpAsync(realm, DateTime.MinValue);
+        }
+
+        /// <summary>
+        ///   Gets the most recent auction house dump
+        /// </summary>
+        /// <param name="realm"> Realm name </param>
+        /// <param name="ifModifiedSince"> The datetime of the lastModified header of the last auction dump. </param>
+        /// <returns> the async task</returns>
+        public async Task<AuctionDump> GetAuctionDumpAsync(string realm, DateTime ifModifiedSince)
+        {
+            var files = await GetAsync<AuctionFilesResponse>("/wow/auction/data/" + GetSlug(realm) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+            if (files == null || files.Files == null || files.Files.Count == 0
+                || string.IsNullOrEmpty(files.Files[files.Files.Count - 1].DownloadPath)
+                || files.Files[0].LastModifiedUtc <= ifModifiedSince)
+            {
+                return null;
+            }
+            var dump = await GetAsync<AuctionDump>(files.Files[0].DownloadPath, null);
+            return dump;
+        }
+
+        /// <summary>
         ///   Begins an async operation to get an item information
         /// </summary>
         /// <param name="itemId"> item id </param>
