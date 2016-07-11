@@ -232,5 +232,52 @@ namespace BattleNetSharp.Community.Wow
         {
             return GetAsync<BattlePetTypesResponse>("/wow/data/pet/types" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
         }
+
+        /// <summary>
+        ///   const used to replace accented characters with non-accented ones
+        /// </summary>
+        private const string AccentedCharacters = "ÂâÄäÃãÁáÀàÊêËëÉéÈèÎîÏïÍíÌìÔôÖöÕõÓóÒòÛûÜüÚúÙùÑñÇç";
+
+        /// <summary>
+        ///   const used to replace accented characters with non-accented ones
+        /// </summary>
+        private const string ReplacedCharacters = "aaaaaaaaaaeeeeeeeeiiiiiiiioooooooooouuuuuuuunncc";
+
+        /// <summary>
+        ///   Get a realm or battleground slug
+        /// </summary>
+        /// <param name="identifier"> string </param>
+        /// <returns> slug </returns>
+        private static string GetSlug(string identifier)
+        {
+            var builder = new StringBuilder();
+            bool dash = false;
+            foreach (char ch in identifier)
+            {
+                if (char.IsLetterOrDigit(ch))
+                {
+                    dash = false;
+                    // String.Normalise is not available in Portable Libraries
+                    int index = AccentedCharacters.IndexOf(ch);
+                    builder.Append(index >= 0 ? ReplacedCharacters[index] : char.ToLowerInvariant(ch));
+                }
+                else if (ch == ' ' && !dash)
+                {
+                    dash = true;
+                    builder.Append('-');
+                }
+            }
+            return builder.ToString();
+        }
+
+        /// <summary>
+        ///   Get the realm string to use in the Url for guild and character requests
+        /// </summary>
+        /// <param name="realmName"> Realm name </param>
+        /// <returns> realm string to use in Url for guild and character requests </returns>
+        public static string GetRealmSlug(string realmName)
+        {
+            return GetSlug(realmName);
+        }
     }
 }
