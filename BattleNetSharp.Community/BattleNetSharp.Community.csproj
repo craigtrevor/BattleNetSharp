@@ -99,6 +99,7 @@
     <Compile Include="Wow\ItemSubcategoryName.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
     <Compile Include="Wow\PowerType.cs" />
+    <Compile Include="Wow\PvpZone.cs" />
     <Compile Include="Wow\Race.cs" />
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\Realm.cs" />
