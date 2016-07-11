@@ -103,6 +103,7 @@
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\Realm.cs" />
     <Compile Include="Wow\RealmPopulation.cs" />
+    <Compile Include="Wow\RealmTypes.cs" />
     <Compile Include="Wow\RewardItem.cs" />
     <Compile Include="Wow\Skill.cs" />
     <Compile Include="Wow\Socket.cs" />
