@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 using System.Globalization;
+using System.Linq;
 using BattleNetSharp.Community.Wow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -29,25 +30,20 @@ namespace BattleNetSharp.UnitTests.Wow
     public class AuctionTests
     {
         [TestMethod]
+        [TestCategory("WOW")]
         public void TestAuctions()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
             var result = client.GetAuctionDumpAsync(TestConstants.TestAuctionHouseRealm).Result;
 
             Assert.IsNotNull(result);
-            Assert.IsNotNull(result.Neutral);
-            Assert.IsNotNull(result.Alliance);
-            Assert.IsNotNull(result.Alliance.Auctions);
-            Assert.IsNotNull(result.Horde);
-            Assert.IsNotNull(result.Realm);
+            Assert.IsNotNull(result.Realms);
+            Assert.IsNotNull(result.Auctions);
+            Assert.IsTrue(result.Auctions.Count > 0);
 
-            Assert.IsNotNull(result.Horde.Auctions);
-            Assert.IsTrue(result.Horde.Auctions.Count > 0);
+            Assert.IsTrue(result.ToString().StartsWith(result.Auctions.Count.ToString(CultureInfo.InvariantCulture)));
 
-            Assert.IsTrue(
-                result.Horde.ToString().StartsWith(result.Horde.Auctions.Count.ToString(CultureInfo.InvariantCulture)));
-
-            var auction = result.Horde.Auctions.FirstOrDefault(a => a.BuyoutValue.HasValue);
+            var auction = result.Auctions.FirstOrDefault(a => a.BuyoutValue.HasValue);
             Assert.IsNotNull(auction);
             Assert.IsTrue(auction.AuctionId > 0);
             Assert.IsTrue(auction.ItemId > 0);
