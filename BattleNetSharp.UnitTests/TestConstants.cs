@@ -35,5 +35,6 @@ namespace BattleNetSharp.UnitTests
 
         public static readonly int WowTestSpellId = 8056;
         public static readonly int WowTestAchievementId = 2144;
+        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
     }
 }
