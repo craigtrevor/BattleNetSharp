@@ -1,5 +1,4 @@
-﻿// Copyright (C) 2011 by Sherif Elmetainy (Grendiser@Kazzak-EU)
-// Copyright (C) 2016 by Craig Trevor
+﻿// Copyright (C) 2016 by Craig Trevor
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,23 +18,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Boss Masterlist information
+    /// </summary>
+    [DataContract]
+    public class BossMasterlist : ApiResponse
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
-
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
+        /// <summary>
+        ///   Gets or sets the id of the bosses
+        /// </summary>
+        [DataMember(Name = "bosses", IsRequired = true)]
+        public IList<Boss> Bosses { get; internal set; }
     }
 }

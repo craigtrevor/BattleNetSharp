@@ -100,6 +100,7 @@
     <Compile Include="Wow\PetTypesTests.cs" />
     <Compile Include="Wow\ItemTests.cs" />
     <Compile Include="Wow\AuctionTests.cs" />
+    <Compile Include="Wow\BossTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

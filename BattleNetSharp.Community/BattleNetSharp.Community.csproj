@@ -68,6 +68,8 @@
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\BattlePetType.cs" />
     <Compile Include="Wow\BattlePetTypesResponse.cs" />
+    <Compile Include="Wow\Boss.cs" />
+    <Compile Include="Wow\BossMasterlist.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
     <Compile Include="Wow\CharacterGlyph.cs" />
     <Compile Include="Wow\CharacterRace.cs" />
@@ -102,6 +104,7 @@
     <Compile Include="Wow\ItemStatType.cs" />
     <Compile Include="Wow\ItemSubcategoryName.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
+    <Compile Include="Wow\Npc.cs" />
     <Compile Include="Wow\PowerType.cs" />
     <Compile Include="Wow\PvpZone.cs" />
     <Compile Include="Wow\PvpZoneStatus.cs" />
