@@ -85,6 +85,24 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an async operation to get boss masterlist information
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<BossMasterlist> GetBossMasterlistAsync()
+        {
+            return GetAsync<BossMasterlist>("/wow/boss/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
+        ///   Begins an async operation to get boss information
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<Boss> GetBossAsync(int bossId)
+        {
+            return GetAsync<Boss>("/wow/boss/" + bossId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   Begins an async operation to get an item information
         /// </summary>
         /// <param name="itemId"> item id </param>
