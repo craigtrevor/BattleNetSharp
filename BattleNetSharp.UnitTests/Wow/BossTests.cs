@@ -1,5 +1,4 @@
-﻿// Copyright (C) 2011 by Sherif Elmetainy (Grendiser@Kazzak-EU)
-// Copyright (C) 2016 by Craig Trevor
+﻿// Copyright (C) 2016 by Craig Trevor
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -20,22 +19,25 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using BattleNetSharp.Community.Wow;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.UnitTests.Wow
 {
-    internal static class TestConstants
+    [TestClass]
+    public class BossTests
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        [TestMethod]
+        [TestCategory("WOW")]
+        public void TestBosses()
+        {
+            var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
+            var bossMasterlist = client.GetBossMasterlistAsync().Result;
+            Assert.IsNotNull(bossMasterlist);
+            Assert.IsTrue(bossMasterlist.Bosses.Count > expectedValue);
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
+            var boss = client.GetBossAsync(TestConstants.WowTestBossId).Result;
+            Assert.IsNotNull(boss);
+        }
     }
 }
