@@ -68,6 +68,7 @@
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\BattlePetType.cs" />
     <Compile Include="Wow\BattlePetTypesResponse.cs" />
+    <Compile Include="Wow\Boss.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
     <Compile Include="Wow\CharacterGlyph.cs" />
     <Compile Include="Wow\CharacterRace.cs" />
