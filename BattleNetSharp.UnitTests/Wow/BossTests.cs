@@ -34,7 +34,7 @@ namespace BattleNetSharp.UnitTests.Wow
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
             var bossMasterlist = client.GetBossMasterlistAsync().Result;
             Assert.IsNotNull(bossMasterlist);
-            Assert.IsTrue(bossMasterlist.Bosses.Count > expectedValue);
+            Assert.IsTrue(bossMasterlist.Bosses.Count > 0);
 
             var boss = client.GetBossAsync(TestConstants.WowTestBossId).Result;
             Assert.IsNotNull(boss);
