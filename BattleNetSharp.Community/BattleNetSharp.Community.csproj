@@ -75,6 +75,7 @@
     <Compile Include="Wow\ChallengeCompletionTime.cs" />
     <Compile Include="Wow\ChallengeGroup.cs" />
     <Compile Include="Wow\ChallengeGroupMember.cs" />
+    <Compile Include="Wow\ChallengeMap.cs" />
     <Compile Include="Wow\ChallengeMedalType.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
     <Compile Include="Wow\CharacterGender.cs" />
