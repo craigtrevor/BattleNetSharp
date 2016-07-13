@@ -124,6 +124,20 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   begins an async operation to get the leaders for realm.
+        /// </summary>
+        /// <param name="realmName"> realm name to get leaders for. If realm is null or empty string, the leaders for the reason are returned. </param>
+        /// <returns> Async operation status </returns>
+        public Task<ChallengesResponse> GetChallengeLeadersAsync(string realmName)
+        {
+            if (string.IsNullOrEmpty(realmName))
+            {
+                realmName = "region";
+            }
+            return GetAsync<ChallengesResponse>("/wow/challenge/" + GetRealmSlug(realmName) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   Begins an async operation to get an item information
         /// </summary>
         /// <param name="itemId"> item id </param>
