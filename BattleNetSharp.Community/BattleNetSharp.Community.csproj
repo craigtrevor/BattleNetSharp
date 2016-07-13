@@ -58,6 +58,7 @@
     <Compile Include="Wow\Achievement.cs" />
     <Compile Include="Wow\AchievementCategory.cs" />
     <Compile Include="Wow\AchievementCriterion.cs" />
+    <Compile Include="Wow\Achievements.cs" />
     <Compile Include="Wow\AchievementsResponse.cs" />
     <Compile Include="Wow\Auction.cs" />
     <Compile Include="Wow\AuctionDump.cs" />
