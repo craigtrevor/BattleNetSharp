@@ -73,6 +73,7 @@
     <Compile Include="Wow\BossMasterlist.cs" />
     <Compile Include="Wow\Challenge.cs" />
     <Compile Include="Wow\ChallengeGroup.cs" />
+    <Compile Include="Wow\ChallengeGroupMember.cs" />
     <Compile Include="Wow\ChallengeMedalType.cs" />
     <Compile Include="Wow\CharacterClass.cs" />
     <Compile Include="Wow\CharacterGender.cs" />
