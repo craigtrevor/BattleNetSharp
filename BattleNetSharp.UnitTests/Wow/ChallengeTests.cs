@@ -27,14 +27,12 @@ namespace BattleNetSharp.UnitTests.Wow
     [TestClass]
     public class ChallengeModeTests
     {
-        private const string TestChallengeModeRealm = "medivh";
-
         [TestMethod]
-        [TestCategory("WOW.ChallengeMode")]
+        [TestCategory("WOW")]
         public void TestChallengeMode()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
-            var challengeMode = client.GetChallengeLeadersAsync(TestChallengeModeRealm).Result;
+            var challengeMode = client.GetChallengeLeadersAsync(TestConstants.TestRealmName).Result;
             Assert.IsNotNull(challengeMode);
             challengeMode = client.GetChallengeLeadersAsync(string.Empty).Result;
             Assert.IsNotNull(challengeMode);
