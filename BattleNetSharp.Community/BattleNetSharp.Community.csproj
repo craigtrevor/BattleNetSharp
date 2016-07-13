@@ -79,6 +79,7 @@
     <Compile Include="Wow\CharacterClass.cs" />
     <Compile Include="Wow\CharacterGender.cs" />
     <Compile Include="Wow\CharacterGlyph.cs" />
+    <Compile Include="Wow\CharacterGuild.cs" />
     <Compile Include="Wow\CharacterRace.cs" />
     <Compile Include="Wow\CharacterRoles.cs" />
     <Compile Include="Wow\CharacterTalent.cs" />
