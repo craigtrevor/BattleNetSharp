@@ -95,6 +95,7 @@
     <Compile Include="Wow\GemType.cs" />
     <Compile Include="Wow\Guild.cs" />
     <Compile Include="Wow\GuildEmblem.cs" />
+    <Compile Include="Wow\GuildFields.cs" />
     <Compile Include="Wow\GuildMembership.cs" />
     <Compile Include="Wow\GuildNewsItem.cs" />
     <Compile Include="Wow\GuildNewsItemType.cs" />

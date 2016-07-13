@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Linq;
 using BattleNetSharp.Community.Wow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -32,7 +33,7 @@ namespace BattleNetSharp.UnitTests.Wow
         [TestCategory("WOW")]
         public void TestGuild()
         {
-            var client = new WowClient(TestConstants.TestRegionName, TestConstants.Credentials, null, null);
+            var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
             var guild = client.GetGuildAsync(TestConstants.TestRealmName, TestConstants.TestGuildName, GuildFields.All).Result;
             Assert.IsNotNull(guild);
             Assert.IsNotNull(guild.Members);
