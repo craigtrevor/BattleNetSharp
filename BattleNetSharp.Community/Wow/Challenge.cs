@@ -19,25 +19,43 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Globalization;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   information about a challenge
+    /// </summary>
+    [DataContract]
+    public class Challenge
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   gets or sets groups that completed the challenge
+        /// </summary>
+        [DataMember(Name = "groups", IsRequired = false)]
+        public IList<ChallengeGroup> Groups { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
+        /// <summary>
+        ///   gets or sets map
+        /// </summary>
+        [DataMember(Name = "map", IsRequired = false)]
+        public ChallengeMap Map { get; internal set; }
+
+        /// <summary>
+        ///   gets or sets realm
+        /// </summary>
+        [DataMember(Name = "realm", IsRequired = false)]
+        public Realm Realm { get; internal set; }
+
+        /// <summary>
+        ///   String representation for debugging purposes
+        /// </summary>
+        /// <returns> String representation for debugging purposes </returns>
+        public override string ToString()
+        {
+            return string.Format(CultureInfo.InvariantCulture, "{0} - {1}", Map, Realm);
+        }
     }
 }

@@ -19,25 +19,56 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Guild news item type
+    /// </summary>
+    [DataContract]
+    public enum GuildNewsItemType
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   None
+        /// </summary>
+        [EnumMember(Value = "none")]
+        None = 0,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
+        /// <summary>
+        ///   Guild achievement
+        /// </summary>
+        [EnumMember(Value = "guildAchievement")]
+        GuildAchievement = 0x1,
+
+        /// <summary>
+        ///   Player achievement
+        /// </summary>
+        [EnumMember(Value = "playerAchievement")]
+        PlayerAchievement = 0x2,
+
+        /// <summary>
+        ///   Item purchase
+        /// </summary>
+        [EnumMember(Value = "itemPurchase")]
+        ItemPurchase = 0x3,
+
+        /// <summary>
+        ///   Item loot
+        /// </summary>
+        [EnumMember(Value = "itemLoot")]
+        ItemLoot = 0x4,
+
+        /// <summary>
+        ///   Item craft
+        /// </summary>
+        [EnumMember(Value = "itemCraft")]
+        ItemCraft = 0x5,
+
+        /// <summary>
+        ///   Guild Level
+        /// </summary>
+        [EnumMember(Value = "guildLevel")]
+        GuildLevelUp = 0x6
     }
 }

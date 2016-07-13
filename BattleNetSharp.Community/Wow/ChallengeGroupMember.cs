@@ -19,25 +19,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    /// Challenge group member
+    /// </summary>
+    [DataContract]
+    public class ChallengeGroupMember
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   gets or sets the character information for the group member
+        /// </summary>
+        [DataMember(Name = "character", IsRequired = false)]
+        public SimpleCharacter Character { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
+        /// <summary>
+        ///   gets or sets the spec for the group member
+        /// </summary>
+        [DataMember(Name = "spec", IsRequired = false)]
+        public Specialization Specialization { get; internal set; }
+
+        /// <summary>
+        ///   String representation for debugging purposes
+        /// </summary>
+        /// <returns> String representation for debugging purposes </returns>
+        public override string ToString()
+        {
+            return Character == null ? "" : Character.ToString();
+        }
     }
 }

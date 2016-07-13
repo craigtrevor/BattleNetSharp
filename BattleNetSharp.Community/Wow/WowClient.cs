@@ -103,6 +103,27 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Gets guild information asynchronously
+        /// </summary>
+        /// <param name="realm"> realm name </param>
+        /// <param name="guildName"> guild name </param>
+        /// <param name="fieldsToRetrieve"> the guild fields to retrieve </param>
+        /// <returns> the status of the async operation </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Globalization", "CA1308:NormalizeStringsToUppercase")]
+        public Task<Guild> GetGuildAsync(string realm, string guildName, GuildFields fieldsToRetrieve)
+        {
+            string[] fields =
+                EnumHelper<GuildFields>.GetNames().Where(
+                    name =>
+                    name != "All" &&
+                    (fieldsToRetrieve & (GuildFields)Enum.Parse(typeof(GuildFields), name, true)) != 0).Select(
+                        name => name.ToLowerInvariant()).ToArray();
+            string queryString = fields.Length == 0 ? "" : "?fields=" + string.Join(",", fields);
+            return GetAsync<Guild>(
+                    "/wow/guild/" + GetRealmSlug(realm) + "/" + Uri.EscapeUriString(guildName) + queryString + "&locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   Begins an async operation to get an item information
         /// </summary>
         /// <param name="itemId"> item id </param>

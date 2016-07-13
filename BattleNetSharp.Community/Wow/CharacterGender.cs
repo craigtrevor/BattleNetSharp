@@ -19,25 +19,21 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
-
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Represents character's gender
+    /// </summary>
+    public enum CharacterGender
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Male
+        /// </summary>
+        Male = 0,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
+        /// <summary>
+        ///   Female
+        /// </summary>
+        Female = 1
     }
 }

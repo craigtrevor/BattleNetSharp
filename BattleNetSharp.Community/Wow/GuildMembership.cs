@@ -19,25 +19,35 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   represents a guild member
+    /// </summary>
+    [DataContract]
+    public class GuildMembership
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Gets or sets Character profile of the guild member (note that all optional character profile fields are not retrieved when getting guild's profile)
+        /// </summary>
+        [DataMember(Name = "character", IsRequired = true)]
+        public SimpleCharacter Character { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
+        /// <summary>
+        ///   Gets or sets the character's rank in the guild. 0 is the highest rank (the guild master).
+        /// </summary>
+        [DataMember(Name = "rank", IsRequired = true)]
+        public int Rank { get; internal set; }
+
+        /// <summary>
+        ///   Gets string representation (for debugging purposes)
+        /// </summary>
+        /// <returns> Gets string representation (for debugging purposes) </returns>
+        public override string ToString()
+        {
+            return Character == null ? "" : Character.ToString();
+        }
     }
 }

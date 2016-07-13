@@ -20,24 +20,43 @@
 // THE SOFTWARE.
 
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   An enumeration to control the guild profile fields to retrieve
+    /// </summary>
+    [Flags]
+    public enum GuildFields
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   None
+        /// </summary>
+        None = 0,
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
+        /// <summary>
+        ///   Members
+        /// </summary>
+        Members = 0x1,
+
+        /// <summary>
+        ///   Achievements
+        /// </summary>
+        Achievements = 0x2,
+
+        /// <summary>
+        ///   Feed
+        /// </summary>
+        News = 0x4,
+
+        /// <summary>
+        ///   Challenge
+        /// </summary>
+        Challenge = 0x8,
+
+        /// <summary>
+        ///   All fields
+        /// </summary>
+        All = 0xF
     }
 }
