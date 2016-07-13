@@ -37,5 +37,7 @@ namespace BattleNetSharp.UnitTests
         public static readonly int WowTestAchievementId = 2144;
         public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
         public static readonly int WowTestBossId = 24723;
+        public static readonly string TestRealmName = "Khaz'goroth";
+        public static readonly string TestGuildName = "Silver Hands";
     }
 }
