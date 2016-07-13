@@ -117,6 +117,7 @@
     <Compile Include="Wow\RealmPopulation.cs" />
     <Compile Include="Wow\RealmTypes.cs" />
     <Compile Include="Wow\RewardItem.cs" />
+    <Compile Include="Wow\SimpleCharacter.cs" />
     <Compile Include="Wow\Skill.cs" />
     <Compile Include="Wow\Socket.cs" />
     <Compile Include="Wow\SocketInfo.cs" />
