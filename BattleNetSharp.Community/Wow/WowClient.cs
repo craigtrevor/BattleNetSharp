@@ -148,6 +148,15 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Getting Mount information asynchronously
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<MountsResponse> GetMountsAsync()
+        {
+            return GetAsync<MountsResponse>("/wow/mount/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
