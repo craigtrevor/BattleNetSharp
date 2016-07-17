@@ -157,6 +157,15 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Getting Pet information asynchronously
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<BattlePetsResponse> GetBattlePetsAsync()
+        {
+            return GetAsync<BattlePetsResponse>("/wow/pet/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
