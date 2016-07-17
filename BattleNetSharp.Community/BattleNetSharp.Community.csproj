@@ -69,6 +69,7 @@
     <Compile Include="Wow\Battlegroup.cs" />
     <Compile Include="Wow\BattlegroupsResponse.cs" />
     <Compile Include="Wow\BattlePetAbility.cs" />
+    <Compile Include="Wow\BattlePetSpecies.cs" />
     <Compile Include="Wow\BattlePetsResponse.cs" />
     <Compile Include="Wow\BattlePetType.cs" />
     <Compile Include="Wow\BattlePetTypesResponse.cs" />
