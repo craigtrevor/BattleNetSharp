@@ -33,8 +33,8 @@ namespace BattleNetSharp.UnitTests.Wow
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
             var pets = client.GetBattlePetsAsync().Result;
             Assert.IsNotNull(pets);
-            Assert.IsNotNull(pets.Pets);
-            Assert.IsTrue(pets.Pets.Count > 0);
+            Assert.IsNotNull(pets.BattlePets);
+            Assert.IsTrue(pets.BattlePets.Count > 0);
             var petAbility = client.GetBattlePetAbilityAsync(TestConstants.BattlePetAbilityId).Result;
             Assert.IsNotNull(petAbility);
             var petSpecies = client.GetBattlePetSpeciesAsync(TestConstants.BattlePetSpeciesId).Result;
