@@ -166,6 +166,16 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an async operation to retrieve information about battle pet abilities
+        /// </summary>
+        /// <param name="abilityId"> id of ability to retrieve </param>
+        /// <returns> Async operation status </returns>
+        public Task<BattlePetAbility> GetBattlePetAbilityAsync(int abilityId)
+        {
+            return GetAsync<BattlePetAbility>("/wow/pet/ability/" + abilityId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
