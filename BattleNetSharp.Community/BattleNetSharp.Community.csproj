@@ -125,6 +125,7 @@
     <Compile Include="Wow\Mount.cs" />
     <Compile Include="Wow\MountsResponse.cs" />
     <Compile Include="Wow\Npc.cs" />
+    <Compile Include="Wow\Pet.cs" />
     <Compile Include="Wow\PowerType.cs" />
     <Compile Include="Wow\PvpZone.cs" />
     <Compile Include="Wow\PvpZoneStatus.cs" />
