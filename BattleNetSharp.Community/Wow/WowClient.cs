@@ -176,6 +176,16 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an async operation to retrieve information about battle pet species
+        /// </summary>
+        /// <param name="speciesId"> id of species to retrieve </param>
+        /// <returns> Async operation status </returns>
+        public Task<BattlePetSpecies> GetBattlePetSpeciesAsync(int speciesId)
+        {
+            return GetAsync<BattlePetSpecies>("/wow/pet/species/" + speciesId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
