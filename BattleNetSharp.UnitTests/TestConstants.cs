@@ -39,5 +39,10 @@ namespace BattleNetSharp.UnitTests
         public static readonly int WowTestBossId = 24723;
         public static readonly string TestRealmName = "Khaz'goroth";
         public static readonly string TestGuildName = "Silver Hands";
+        public static readonly int BattlePetAbilityId = 640;
+        public static readonly int BattlePetSpeciesId = 258;
+        public static readonly int BattlePetStatsLevel = 25;
+        public static readonly int BattlePetStatsBreedId = 5;
+        public static readonly int BattlePetStatsQualityId = 4;
     }
 }
