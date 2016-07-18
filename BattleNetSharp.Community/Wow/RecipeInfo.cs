@@ -19,31 +19,47 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Represents information about recipe
+    /// </summary>
+    [DataContract]
+    public class RecipeInfo : ApiResponse
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Recipe id
+        /// </summary>
+        [DataMember(Name = "id")]
+        public int Id { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
-        public static readonly int BattlePetAbilityId = 640;
-        public static readonly int BattlePetSpeciesId = 258;
-        public static readonly int BattlePetStatsLevel = 25;
-        public static readonly int BattlePetStatsBreedId = 5;
-        public static readonly int BattlePetStatsQualityId = 4;
-        public static readonly int WowTestRecipeId = 70556;
+        /// <summary>
+        ///   Recipe icon
+        /// </summary>
+        [DataMember(Name = "icon")]
+        public string Icon { get; internal set; }
+
+        /// <summary>
+        ///   Recipe name
+        /// </summary>
+        [DataMember(Name = "name")]
+        public string Name { get; internal set; }
+
+        /// <summary>
+        ///   Profession name
+        /// </summary>
+        [DataMember(Name = "profession")]
+        public string ProfessionName { get; internal set; }
+
+        /// <summary>
+        ///   Gets string representation (for debugging purposes)
+        /// </summary>
+        /// <returns> Gets string representation (for debugging purposes) </returns>
+        public override string ToString()
+        {
+            return Name;
+        }
     }
 }
