@@ -186,6 +186,19 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an async operation to retrieve information about stats of battle pet species
+        /// </summary>
+        /// <param name="speciesId"> id of species to retrieve </param>
+        /// <param name="level"> level of species to retrieve </param>
+        /// <param name="breedId"> breedId of species to retrieve </param>
+        /// <param name="qualityId"> qualityId of species to retrieve </param>
+        /// <returns> Async operation status </returns>
+        public Task<PetStats> GetBattlePetStatsAsync(int speciesId, int level, int breedId, int qualityId)
+        {
+            return GetAsync<PetStats>("/wow/pet/stats/" + speciesId.ToString(CultureInfo.InvariantCulture) + "?level=" + level.ToString(CultureInfo.InvariantCulture) + "&breedId=" + breedId.ToString(CultureInfo.InvariantCulture) + "&qualityId=" + qualityId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
