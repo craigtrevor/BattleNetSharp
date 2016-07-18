@@ -198,6 +198,17 @@ namespace BattleNetSharp.Community.Wow
             return GetAsync<PetStats>("/wow/pet/stats/" + speciesId.ToString(CultureInfo.InvariantCulture) + "?level=" + level.ToString(CultureInfo.InvariantCulture) + "&breedId=" + breedId.ToString(CultureInfo.InvariantCulture) + "&qualityId=" + qualityId.ToString(CultureInfo.InvariantCulture) + "&locale=" + _locale + "&apikey=" + _publicKey, null);
         }
 
+
+        /// <summary>
+        ///   Begins an async operation that Gets a recipe information
+        /// </summary>
+        /// <param name="recipeId"> the id for the recipe to fetch </param>
+        /// <returns> The state of the request </returns>
+        public Task<RecipeInfo> GetRecipeAsync(int recipeId)
+        {
+            return GetAsync<RecipeInfo>("/wow/recipe/" + recipeId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
         /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
