@@ -19,31 +19,30 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using BattleNetSharp.Community.Wow;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.UnitTests.Wow
 {
-    internal static class TestConstants
+    [TestClass]
+    public class RecipeTests
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
-        public static readonly int BattlePetAbilityId = 640;
-        public static readonly int BattlePetSpeciesId = 258;
-        public static readonly int BattlePetStatsLevel = 25;
-        public static readonly int BattlePetStatsBreedId = 5;
-        public static readonly int BattlePetStatsQualityId = 4;
-        public static readonly int WowTestRecipeId = 70556;
+        /// <summary>
+        /// Test recipe
+        /// </summary>
+        [TestMethod]
+        [TestCategory("WOW")]
+        public void TestRecipe()
+        {
+            var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
+            var recipe = client.GetRecipeAsync(TestConstants.WowTestRecipeId).Result;
+            Assert.IsNotNull(recipe);
+            Assert.IsNotNull(recipe.Name);
+            Assert.IsNotNull(recipe.ToString());
+            Assert.IsNotNull(recipe.ProfessionName);
+            Assert.IsNotNull(recipe.Icon);
+            Assert.IsTrue(recipe.Id > 0);
+        }
     }
 }
