@@ -1,5 +1,4 @@
-﻿// Copyright (C) 2011 by Sherif Elmetainy (Grendiser@Kazzak-EU)
-// Copyright (C) 2016 by Craig Trevor
+﻿// Copyright (C) 2016 by Craig Trevor
 // 
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -19,30 +18,31 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using BattleNetSharp.Community;
+using System.Globalization;
+using System.Runtime.Serialization;
 
-namespace BattleNetSharp.UnitTests
+namespace BattleNetSharp.Community.Wow
 {
-    internal static class TestConstants
+    /// <summary>
+    ///   Mount information
+    /// </summary>
+    [DataContract]
+    public class BattlePetsResponse : ApiResponse
     {
-        public static readonly Region TestRegion = Region.US;
-        public static readonly string TestLocale = "en_US";
+        /// <summary>
+        ///   Gets Mounts
+        /// </summary>
+        [DataMember(Name = "pets")]
+        public IList<Pet> BattlePets { get; internal set; }
 
-        public static readonly int WowTestSpellId = 8056;
-        public static readonly int WowTestAchievementId = 2144;
-        public static readonly string TestAuctionHouseRealm = "Khaz'goroth";
-        public static readonly int WowTestBossId = 24723;
-        public static readonly string TestRealmName = "Khaz'goroth";
-        public static readonly string TestGuildName = "Silver Hands";
-        public static readonly int BattlePetAbilityId = 640;
-        public static readonly int BattlePetSpeciesId = 258;
-        public static readonly int BattlePetStatsLevel = 25;
-        public static readonly int BattlePetStatsBreedId = 5;
-        public static readonly int BattlePetStatsQualityId = 4;
+        /// <summary>
+        ///   String representation for debugging
+        /// </summary>
+        /// <returns> </returns>
+        public override string ToString()
+        {
+            return BattlePets.Count.ToString(CultureInfo.CurrentCulture) + " Pets";
+        }
     }
 }
