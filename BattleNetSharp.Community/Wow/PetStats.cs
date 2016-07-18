@@ -28,7 +28,7 @@ namespace BattleNetSharp.Community.Wow
     ///   Pets stats
     /// </summary>
     [DataContract]
-    public class PetStats
+    public class PetStats : ApiResponse
     {
         /// <summary>
         ///   gets or sets breed id

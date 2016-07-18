@@ -195,7 +195,7 @@ namespace BattleNetSharp.Community.Wow
         /// <returns> Async operation status </returns>
         public Task<PetStats> GetBattlePetStatsAsync(int speciesId, int level, int breedId, int qualityId)
         {
-            return GetAsync<PetStats>("/wow/pet/stats/" + speciesId.ToString(CultureInfo.InvariantCulture) + "?level=" + level.ToString(CultureInfo.InvariantCulture) + "&breedId=" + breedId.ToString(CultureInfo.InvariantCulture) + "&qualityId=" + qualityId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+            return GetAsync<PetStats>("/wow/pet/stats/" + speciesId.ToString(CultureInfo.InvariantCulture) + "?level=" + level.ToString(CultureInfo.InvariantCulture) + "&breedId=" + breedId.ToString(CultureInfo.InvariantCulture) + "&qualityId=" + qualityId.ToString(CultureInfo.InvariantCulture) + "&locale=" + _locale + "&apikey=" + _publicKey, null);
         }
 
         /// <summary>
