@@ -39,7 +39,11 @@ namespace BattleNetSharp.UnitTests.Wow
             var generalCategory = achievements.Categories.FirstOrDefault(c => c.Name == "General");
             Assert.IsNotNull(generalCategory);
             Assert.IsNotNull(generalCategory.Achievements);
-            var higherlearning = generalCategory.Achievements.FirstOrDefault(a => a.Title == "Higher Learning");
+            var explorationCategory = achievements.Categories.FirstOrDefault(c => c.Name == "Exploration");
+            Assert.IsNotNull(explorationCategory);
+            var northrendCategory = explorationCategory.Categories.FirstOrDefault(c => c.Name == "Northrend");
+            Assert.IsNotNull(northrendCategory);
+            var higherlearning = northrendCategory.Achievements.FirstOrDefault(a => a.Title == "Higher Learning");
             Assert.IsNotNull(higherlearning);
             Assert.IsTrue(higherlearning.Id > 0);
             Assert.AreEqual(higherlearning.Title, higherlearning.ToString());
