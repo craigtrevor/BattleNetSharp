@@ -57,6 +57,12 @@ namespace BattleNetSharp.Community.Wow
         ///   Focus
         /// </summary>
         [EnumMember(Value = "focus")]
-        Focus
+        Focus,
+
+        /// <summary>
+        ///   Fury
+        /// </summary>
+        [EnumMember(Value = "fury")]
+        Fury
     }
 }
