@@ -210,6 +210,16 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an asynchronous operation to quest information
+        /// </summary>
+        /// <param name="questId"> the quest id </param>
+        /// <returns> The state of the async operation </returns>
+        public Task<Quest> GetQuestAsync(int questId)
+        {
+            return GetAsync<Quest>("/wow/quest/" + questId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about a spell
         /// </summary>
         /// <param name="spellId"> spell id </param>
