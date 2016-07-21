@@ -46,5 +46,6 @@ namespace BattleNetSharp.UnitTests
         public static readonly int BattlePetStatsQualityId = 4;
         public static readonly int WowTestRecipeId = 70556;
         public static readonly int WowTestQuestId = 9962;
+        public static readonly int WowTestZoneId = 4131;
     }
 }
