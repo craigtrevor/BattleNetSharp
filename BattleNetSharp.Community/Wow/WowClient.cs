@@ -230,6 +230,24 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   Begins an async operation to get zone masterlist information
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<ZoneMasterlist> GetZoneMasterlistAsync()
+        {
+            return GetAsync<ZoneMasterlist>("/wow/zone/" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
+        ///   Begins an async operation to get zone information
+        /// </summary>
+        /// <returns> The status of the async operation </returns>
+        public Task<Zone> GetZoneAsync(int zoneId)
+        {
+            return GetAsync<Zone>("/wow/zone/" + zoneId.ToString(CultureInfo.InvariantCulture) + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   Get the battlegroups for the region
         /// </summary>
         /// <returns> The status of the async operation </returns>

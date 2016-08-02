@@ -123,6 +123,7 @@
     <Compile Include="Wow\ItemStat.cs" />
     <Compile Include="Wow\ItemStatType.cs" />
     <Compile Include="Wow\ItemSubcategoryName.cs" />
+    <Compile Include="Wow\Location.cs" />
     <Compile Include="Wow\MemoryCache.cs" />
     <Compile Include="Wow\Mount.cs" />
     <Compile Include="Wow\MountsResponse.cs" />
@@ -152,6 +153,8 @@
     <Compile Include="Wow\WeaponDamage.cs" />
     <Compile Include="Wow\WeaponInfo.cs" />
     <Compile Include="Wow\WowClient.cs" />
+    <Compile Include="Wow\Zone.cs" />
+    <Compile Include="Wow\ZoneMasterlist.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Microsoft.Threading.Tasks, Version=1.0.12.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
