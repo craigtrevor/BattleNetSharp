@@ -27,6 +27,7 @@ namespace BattleNetSharp.UnitTests.Wow
     public class ZoneTests
     {
         [TestMethod]
+        [TestCategory("WOW")]
         public void TestZones()
         {
             var client = new WowClient(TestConstants.TestRegion, Properties.Settings.Default.PublicKey, TestConstants.TestLocale);
