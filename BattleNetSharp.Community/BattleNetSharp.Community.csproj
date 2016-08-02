@@ -152,6 +152,7 @@
     <Compile Include="Wow\WeaponDamage.cs" />
     <Compile Include="Wow\WeaponInfo.cs" />
     <Compile Include="Wow\WowClient.cs" />
+    <Compile Include="Wow\Zone.cs" />
     <Compile Include="Wow\ZoneMasterlist.cs" />
   </ItemGroup>
   <ItemGroup>
