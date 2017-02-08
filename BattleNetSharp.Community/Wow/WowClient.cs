@@ -357,6 +357,16 @@ namespace BattleNetSharp.Community.Wow
         }
 
         /// <summary>
+        ///   begins an async operation to retrieve information about realm status
+        /// </summary>
+        /// <returns> async operation result </returns>
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Design", "CA1024:UsePropertiesWhereAppropriate")]
+        public Task<RealmStatusResponse> GetRealmStatusAsync()
+        {
+            return GetAsync<RealmStatusResponse>("/wow/realm/status" + "?locale=" + _locale + "&apikey=" + _publicKey, null);
+        }
+
+        /// <summary>
         ///   begins an async operation to retrieve information about class talents
         /// </summary>
         /// <returns> async operation result </returns>
