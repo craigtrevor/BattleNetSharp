@@ -90,18 +90,6 @@ namespace BattleNetSharp.Community.Wow
         public RealmTypes RealmType { get; internal set; }
 
         /// <summary>
-        ///   Gets or sets the status of the PVP Zone Tol Barad
-        /// </summary>
-        [DataMember(Name = "tol-barad")]
-        public PvpZone TolBarad { get; internal set; }
-
-        /// <summary>
-        ///   Gets or sets the status of the PVP zone wintergrasp
-        /// </summary>
-        [DataMember(Name = "wintergrasp")]
-        public PvpZone WinterGrasp { get; internal set; }
-
-        /// <summary>
         ///   Gets whether the realm is PVP enabled
         /// </summary>
         public bool IsPvp
