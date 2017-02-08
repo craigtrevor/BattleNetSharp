@@ -131,13 +131,12 @@
     <Compile Include="Wow\Pet.cs" />
     <Compile Include="Wow\PetStats.cs" />
     <Compile Include="Wow\PowerType.cs" />
-    <Compile Include="Wow\PvpZone.cs" />
-    <Compile Include="Wow\PvpZoneStatus.cs" />
     <Compile Include="Wow\Quest.cs" />
     <Compile Include="Wow\Race.cs" />
     <Compile Include="Wow\RacesResponse.cs" />
     <Compile Include="Wow\Realm.cs" />
     <Compile Include="Wow\RealmPopulation.cs" />
+    <Compile Include="Wow\RealmStatusResponse.cs" />
     <Compile Include="Wow\RealmTypes.cs" />
     <Compile Include="Wow\RecipeInfo.cs" />
     <Compile Include="Wow\RewardItem.cs" />
