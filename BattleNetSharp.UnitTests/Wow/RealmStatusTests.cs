@@ -20,6 +20,7 @@
 // THE SOFTWARE.
 
 using System;
+using System.Linq;
 using BattleNetSharp.Community.Wow;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 
@@ -44,20 +45,11 @@ namespace BattleNetSharp.UnitTests.Wow
             Assert.IsTrue(response.Realms.Any(r => r.IsRP));
             Assert.IsTrue(response.Realms.All(r => r.Locale != null));
             Assert.IsTrue(response.Realms.All(r => r.Name != null));
-            Assert.IsTrue(!response.Realms.Any(r => r.ToString() == null));
+            Assert.IsTrue(!response.Realms.Any(r => r.ToString().Equals(null)));
             Assert.IsTrue(response.Realms.All(r => r.Slug != null));
             Assert.IsTrue(response.Realms.All(r => r.BattleGroupName != null));
             Assert.IsTrue(response.Realms.Any(r => r.Status));
             Assert.IsTrue(response.Realms.All(r => r.TimeZone != null));
-            Assert.IsTrue(response.Realms.Any(r => r.WinterGrasp != null));
-
-            var tolBarad = response.Realms.Where(r => r.TolBarad != null
-                                                      && r.Status).Select(r => r.TolBarad).FirstOrDefault();
-            Assert.IsNotNull(tolBarad);
-            Assert.IsTrue(tolBarad.AreaId > 0);
-            Assert.IsTrue(tolBarad.ControllingFaction != Faction.Neutral);
-            Assert.IsTrue(tolBarad.NextBattleTimeUtc.Year == DateTime.Now.Year);
-            Assert.IsTrue(tolBarad.Status != PvpZoneStatus.Unknown);
         }
     }
 }
